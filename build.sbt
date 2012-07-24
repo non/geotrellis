@@ -9,6 +9,7 @@ addCompilerPlugin("com.azavea.math.plugin" %% "optimized-numeric" % "0.1")
 mergeStrategy in assembly <<= (mergeStrategy in assembly) {
   (old) => {
     case "application.conf" => MergeStrategy.concat
+    case "reference.conf" => MergeStrategy.concat
     case "META-INF/MANIFEST.MF" => MergeStrategy.discard
     //case x => MergeStrategy.deduplicate
     case _ => MergeStrategy.first
